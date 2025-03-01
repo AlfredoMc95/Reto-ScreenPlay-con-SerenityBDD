@@ -1,10 +1,14 @@
 package stepdefinition;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import steps.BuyAndDeleteProductSteps;
+
+import java.util.List;
+import java.util.Map;
 
 public class BuyAndDeleteProduct {
     private static final Logger LOGGER = LoggerFactory.getLogger(BuyAndDeleteProduct.class);
@@ -21,5 +25,11 @@ public class BuyAndDeleteProduct {
     public void orderBy(String orderType) {
         LOGGER.debug("Usuario intenta ordenar los productos por {}", orderType);
         buyAndDeleteProductSteps.orderBy(orderType);
+    }
+
+    @And("agrega los siguientes productos al carrito:")
+    public void agregaLosSiguientesProductosAlCarrito(List<Map<String, String>> productsTable) {
+        LOGGER.debug("Usuario agrega los productos al carrito");
+        buyAndDeleteProductSteps.addProducts(productsTable);
     }
 }
