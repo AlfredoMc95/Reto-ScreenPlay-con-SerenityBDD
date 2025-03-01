@@ -30,7 +30,7 @@ public class Login implements Task {
         );
     }
 
-    public static Login failedLogin(String username, String password) {
+    public static Login LoginUser(String username, String password) {
         return Tasks.instrumented(Login.class, username, password);
     }
 }

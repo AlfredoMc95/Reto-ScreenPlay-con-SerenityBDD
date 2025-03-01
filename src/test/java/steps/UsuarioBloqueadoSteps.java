@@ -3,7 +3,7 @@ package steps;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
-import static constants.Constants.ACTOR;
+import static constants.Constants.ACTOR_BLOCKED;
 import static constants.Constants.URL;
 import static hook.OpenBrowser.openUrl;
 
@@ -13,7 +13,7 @@ public class UsuarioBloqueadoSteps {
 
     @Step("Abrir la página de Swag Labs")
     public void userLogin() {
-        OnStage.theActorCalled(ACTOR).attemptsTo(
+        OnStage.theActorCalled(ACTOR_BLOCKED).attemptsTo(
                 openUrl(URL)
         );
     }
@@ -21,7 +21,7 @@ public class UsuarioBloqueadoSteps {
     @Step("Ingresar credenciales: {0} / {1}")
     public void userFillsCredentials(String user, String password) {
         OnStage.theActorInTheSpotlight().attemptsTo(
-                tasks.Login.failedLogin(user, password)
+                tasks.Login.LoginUser(user, password)
         );
     }
 
