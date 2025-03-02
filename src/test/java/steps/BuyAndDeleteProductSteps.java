@@ -5,6 +5,7 @@ import net.serenitybdd.screenplay.actors.OnStage;
 import tasks.AddProducts;
 import tasks.DeleteProduct;
 import tasks.SelectBuyCar;
+import tasks.CheckOut;
 
 import java.util.List;
 import java.util.Map;
@@ -53,6 +54,13 @@ public class BuyAndDeleteProductSteps {
     public void deleteProduct(String product) {
         theActorInTheSpotlight().attemptsTo(
                 DeleteProduct.forProduct(product)
+        );
+    }
+
+    @Step("Procede al checkout")
+    public void checkout() {
+        OnStage.theActorCalled(ACTOR_NORMAL).attemptsTo(
+                CheckOut.on()
         );
     }
 }

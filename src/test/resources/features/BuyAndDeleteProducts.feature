@@ -19,6 +19,6 @@ Feature: Proceso de compra en Swag Labs
 
         Examples:
             | usuario       | password      | criterio | producto1                    | producto2              | producto3               | producto_eliminado       | nombre  | apellido | codigo_postal |
-            | standard_user | secret_sauce  | lohi     | Sauce Labs Onesie            | Sauce Labs Backpack    | Sauce Labs Bike Light   | Sauce Labs Onesie  | María   | López    | 54321         |
+            | standard_user | secret_sauce  | lohi     | Sauce Labs Onesie            | Sauce Labs Backpack    | Sauce Labs Bike Light   | Sauce Labs Onesie        | María   | López    | 54321         |
             | standard_user | secret_sauce  | za       | Sauce Labs Bolt T-Shirt      | Sauce Labs Bike Light  | Sauce Labs Backpack     | Sauce Labs Backpack      | María   | López    | 54321         |
 

@@ -12,5 +12,6 @@ public class CarPage extends PageObject {
                 ));
     }
 
+    public static Target CHECKOUT_BUTTON = Target.the("Checkout button").locatedBy("//a[@class='btn_action checkout_button']");
 
 }

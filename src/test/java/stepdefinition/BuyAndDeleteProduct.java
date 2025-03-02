@@ -44,4 +44,10 @@ public class BuyAndDeleteProduct {
         LOGGER.debug("Elimina producto {} del carrito", product);
         buyAndDeleteProductSteps.deleteProduct(product);
     }
+
+    @And("procede al checkout")
+    public void procedeAlCheckout() {
+        LOGGER.debug("Usuario procede al checkout");
+        buyAndDeleteProductSteps.checkout();
+    }
 }
