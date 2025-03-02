@@ -17,7 +17,7 @@ import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
 import static org.hamcrest.Matchers.containsString;
 
 public class BuyAndDeleteProductSteps {
-    @Step("Ingresar credenciales: {0} / {1}")
+    @Step("Ingresar credenciales:")
     public void userLogin(String user, String password) {
         OnStage.theActorCalled(ACTOR_NORMAL).attemptsTo(
                 openUrl(URL),

@@ -1,4 +1,4 @@
-package stepdefinition;
+package stepDefinition;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
@@ -8,7 +8,8 @@ import io.cucumber.java.en.When;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import steps.BuyAndDeleteProductSteps;
-
+import static constants.Constants.USERNAME;
+import static constants.Constants.PASSWORD;
 import java.util.List;
 import java.util.Map;
 
@@ -17,10 +18,10 @@ public class BuyAndDeleteProduct {
 
     BuyAndDeleteProductSteps buyAndDeleteProductSteps = new BuyAndDeleteProductSteps();
 
-    @Given("Given que el usuario inicia sesión en Swag Labs con {string} y {string}")
-    public void userLogin(String user, String password) {
-        LOGGER.debug("Usuario intenta loguearse con usuario: {} y contraseña: {}", user, password);
-        buyAndDeleteProductSteps.userLogin(user, password);
+    @Given("Given que el usuario inicia sesión en Swag Labs")
+    public void userLogin() {
+        LOGGER.debug("Usuario intenta loguearse con usuario: {} y contraseña: {}", USERNAME, PASSWORD);
+        buyAndDeleteProductSteps.userLogin(USERNAME, PASSWORD);
     }
 
     @When("ordena los productos por {string}")
