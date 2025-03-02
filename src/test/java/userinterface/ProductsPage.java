@@ -10,4 +10,5 @@ public class ProductsPage {
                 .locatedBy(String.format("//div[@class='inventory_item']//div[@class='inventory_item_name'][text()='%s']/ancestor::div[@class='inventory_item']//button[contains(@class, 'btn_inventory')]", productName));
     }
 
+    public static final Target BUY_CAR_BUTTON = Target.the("Buy Cart button").locatedBy("//span[@class='fa-layers-counter shopping_cart_badge']");
 }

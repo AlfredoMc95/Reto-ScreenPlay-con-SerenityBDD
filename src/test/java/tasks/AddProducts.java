@@ -4,12 +4,10 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 import userinterface.ProductsPage;
 
 import java.util.List;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 
 public class AddProducts implements Task {

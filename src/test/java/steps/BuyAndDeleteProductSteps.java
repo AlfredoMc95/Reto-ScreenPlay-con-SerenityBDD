@@ -3,6 +3,8 @@ package steps;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.actors.OnStage;
 import tasks.AddProducts;
+import tasks.DeleteProduct;
+import tasks.SelectBuyCar;
 
 import java.util.List;
 import java.util.Map;
@@ -37,6 +39,20 @@ public class BuyAndDeleteProductSteps {
 
         theActorInTheSpotlight().attemptsTo(
                 AddProducts.toCart(productNames)
+        );
+    }
+
+    @Step("Selecciona carrito de compras")
+    public void selectBuycar() {
+        OnStage.theActorCalled(ACTOR_NORMAL).attemptsTo(
+                SelectBuyCar.on()
+        );
+    }
+
+    @Step("Elimina producto {0} del carrito")
+    public void deleteProduct(String product) {
+        theActorInTheSpotlight().attemptsTo(
+                DeleteProduct.forProduct(product)
         );
     }
 }

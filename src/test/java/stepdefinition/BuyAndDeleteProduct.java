@@ -32,4 +32,16 @@ public class BuyAndDeleteProduct {
         LOGGER.debug("Usuario agrega los productos al carrito");
         buyAndDeleteProductSteps.addProducts(productsTable);
     }
+
+    @And("revisa el carrito de compras")
+    public void revisaElCarritoDeCompras() {
+        LOGGER.debug("Usuario verifica productos seleccionados en el carrito");
+        buyAndDeleteProductSteps.selectBuycar();
+    }
+
+    @And("elimina {string} del carrito")
+    public void eliminaDelCarrito(String product) {
+        LOGGER.debug("Elimina producto {} del carrito", product);
+        buyAndDeleteProductSteps.deleteProduct(product);
+    }
 }
