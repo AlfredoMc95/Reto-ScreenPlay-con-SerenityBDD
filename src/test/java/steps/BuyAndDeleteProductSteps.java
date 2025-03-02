@@ -2,6 +2,7 @@ package steps;
 
 import io.cucumber.datatable.DataTable;
 import net.serenitybdd.annotations.Step;
+import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import tasks.*;
 
@@ -13,6 +14,7 @@ import static constants.Constants.ACTOR_NORMAL;
 import static constants.Constants.URL;
 import static hook.OpenBrowser.openUrl;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorInTheSpotlight;
+import static org.hamcrest.Matchers.containsString;
 
 public class BuyAndDeleteProductSteps {
     @Step("Ingresar credenciales: {0} / {1}")
@@ -66,6 +68,20 @@ public class BuyAndDeleteProductSteps {
     public void userData(DataTable dataTable) {
         theActorInTheSpotlight().attemptsTo(
                 FillUserData.with(dataTable)
+        );
+    }
+
+    @Step("Confirma el pedido")
+    public void confirmOrder() {
+        theActorInTheSpotlight().attemptsTo(
+                ConfirmOrder.on()
+        );
+    }
+
+    @Step("el sistema debe mostrar un mensaje de pedido confirmando")
+    public void confirmPurchase() {
+        OnStage.theActorInTheSpotlight().should(
+                GivenWhenThen.seeThat( questions.ConfirmPurchase.value(), containsString("THANK YOU FOR YOUR ORDER"))
         );
     }
 }

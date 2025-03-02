@@ -15,7 +15,7 @@ Feature: Proceso de compra en Swag Labs
             | Nombre   | Apellido   | Código Postal   |
             | <nombre> | <apellido> | <código_postal> |
         And confirma el pedido
-        Then el sistema debe mostrar un mensaje de confismando el pedido
+        Then el sistema debe mostrar un mensaje de pedido confirmando
 
         Examples:
             | usuario       | password      | criterio | producto1                    | producto2              | producto3               | producto_eliminado       | nombre  | apellido | código_postal |

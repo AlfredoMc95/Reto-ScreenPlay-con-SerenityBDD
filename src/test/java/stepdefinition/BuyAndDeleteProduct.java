@@ -3,6 +3,7 @@ package stepdefinition;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -56,5 +57,17 @@ public class BuyAndDeleteProduct {
     public void ingresaLosDatosDelUsuario(DataTable dataTable) {
         LOGGER.debug("Usuario ingresa datos del usuario");
         buyAndDeleteProductSteps.userData(dataTable);
+    }
+
+    @And("confirma el pedido")
+    public void confirmaElPedido() {
+        LOGGER.debug("Usuario confirma el pedido");
+        buyAndDeleteProductSteps.confirmOrder();
+    }
+
+    @Then("el sistema debe mostrar un mensaje de pedido confirmando")
+    public void confirmarCompra() {
+        LOGGER.debug("el sistema debe mostrar un mensaje de pedido confirmando");
+        buyAndDeleteProductSteps.confirmPurchase();
     }
 }
