@@ -13,12 +13,12 @@ Feature: Proceso de compra en Swag Labs
         And procede al checkout
         And ingresa los datos del usuario:
             | Nombre   | Apellido   | Código Postal   |
-            | <nombre> | <apellido> | <codigo_postal> |
+            | <nombre> | <apellido> | <código_postal> |
         And confirma el pedido
-        Then el sistema debe mostrar un mensaje de "Compra realizada con éxito"
+        Then el sistema debe mostrar un mensaje de confismando el pedido
 
         Examples:
-            | usuario       | password      | criterio | producto1                    | producto2              | producto3               | producto_eliminado       | nombre  | apellido | codigo_postal |
+            | usuario       | password      | criterio | producto1                    | producto2              | producto3               | producto_eliminado       | nombre  | apellido | código_postal |
             | standard_user | secret_sauce  | lohi     | Sauce Labs Onesie            | Sauce Labs Backpack    | Sauce Labs Bike Light   | Sauce Labs Onesie        | María   | López    | 54321         |
             | standard_user | secret_sauce  | za       | Sauce Labs Bolt T-Shirt      | Sauce Labs Bike Light  | Sauce Labs Backpack     | Sauce Labs Backpack      | María   | López    | 54321         |
 

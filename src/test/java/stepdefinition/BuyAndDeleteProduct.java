@@ -1,5 +1,6 @@
 package stepdefinition;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -49,5 +50,11 @@ public class BuyAndDeleteProduct {
     public void procedeAlCheckout() {
         LOGGER.debug("Usuario procede al checkout");
         buyAndDeleteProductSteps.checkout();
+    }
+
+    @And("ingresa los datos del usuario:")
+    public void ingresaLosDatosDelUsuario(DataTable dataTable) {
+        LOGGER.debug("Usuario ingresa datos del usuario");
+        buyAndDeleteProductSteps.userData(dataTable);
     }
 }

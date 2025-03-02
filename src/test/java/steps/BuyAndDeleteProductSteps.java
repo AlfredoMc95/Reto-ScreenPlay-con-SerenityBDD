@@ -1,11 +1,9 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.screenplay.actors.OnStage;
-import tasks.AddProducts;
-import tasks.DeleteProduct;
-import tasks.SelectBuyCar;
-import tasks.CheckOut;
+import tasks.*;
 
 import java.util.List;
 import java.util.Map;
@@ -61,6 +59,13 @@ public class BuyAndDeleteProductSteps {
     public void checkout() {
         OnStage.theActorCalled(ACTOR_NORMAL).attemptsTo(
                 CheckOut.on()
+        );
+    }
+
+    @Step("Ingresa los datos del usuario:")
+    public void userData(DataTable dataTable) {
+        theActorInTheSpotlight().attemptsTo(
+                FillUserData.with(dataTable)
         );
     }
 }
