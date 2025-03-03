@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import steps.BuyAndDeleteProductSteps;
 import static constants.Constants.USERNAME;
 import static constants.Constants.PASSWORD;
+import static constants.Constants.NAME;
+import static constants.Constants.LASTNAME;
+import static constants.Constants.ZIPCODE;
 import java.util.List;
 import java.util.Map;
 
@@ -54,10 +57,10 @@ public class BuyAndDeleteProduct {
         buyAndDeleteProductSteps.checkout();
     }
 
-    @And("ingresa los datos del usuario:")
-    public void ingresaLosDatosDelUsuario(DataTable dataTable) {
+    @And("ingresa los datos del usuario")
+    public void ingresaLosDatosDelUsuario() {
         LOGGER.debug("Usuario ingresa datos del usuario");
-        buyAndDeleteProductSteps.userData(dataTable);
+        buyAndDeleteProductSteps.userData(NAME,LASTNAME,ZIPCODE);
     }
 
     @And("confirma el pedido")

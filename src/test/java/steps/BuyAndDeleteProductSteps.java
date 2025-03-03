@@ -65,9 +65,9 @@ public class BuyAndDeleteProductSteps {
     }
 
     @Step("Ingresa los datos del usuario:")
-    public void userData(DataTable dataTable) {
+    public void userData(String name, String lastname, String zipcode) {
         theActorInTheSpotlight().attemptsTo(
-                FillUserData.with(dataTable)
+                FillUserData.with(name,lastname,zipcode)
         );
     }
 

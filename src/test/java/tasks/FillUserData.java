@@ -1,23 +1,20 @@
 package tasks;
 
-import io.cucumber.datatable.DataTable;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import userinterface.UserDataPage;
 
-import java.util.List;
-import java.util.Map;
 
 public class FillUserData implements Task {
 
-    public FillUserData(DataTable dataTable) {
-        List<Map<String, String>> userData = dataTable.asMaps(String.class, String.class);
-        this.name = userData.get(0).get("Nombre");
-        this.lastName = userData.get(0).get("Apellido");
-        this.zipCode = userData.get(0).get("Código Postal");
+    public FillUserData(String name, String lastName, String zipCode) {
+        this.name = name;
+        this.lastName = lastName;
+        this.zipCode = zipCode;
     }
+
 
     private final String name;
     private final String lastName;
@@ -34,7 +31,7 @@ public class FillUserData implements Task {
         );
     }
 
-    public static FillUserData with(DataTable dataTable) {
-        return new FillUserData(dataTable);
+    public static FillUserData with(String name, String lastName, String zipCode) {
+        return new FillUserData(name,lastName,zipCode);
     }
 }
